@@ -9,5 +9,22 @@
     <h1>
         홈 화면
     </h1>
+    <script src="/../node_modules/vue/dist/vue.cjs.js"></script>
+    <script>
+        new Vue({
+            data: {
+                test: "hello"
+            },
+            method: {
+                test(){
+                    console.log("hello");
+                }
+            },
+            mounted(){
+                console.log("안녕");
+            }
+
+        });
+    </script>
 </body>
 </html>
