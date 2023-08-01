@@ -37,5 +37,6 @@ out/
 .vscode/
 
 ### 정적리소스 - 프론트엔드 라이브러리 ###
-!**/src/main/resources/static/node_modules
-!**/src/main/resources/static/package.json
+/src/main/resources/static/node_modules/
+/src/main/resources/static/package.json
+/src/main/resources/static/package-lock.json
