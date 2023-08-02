@@ -6,25 +6,37 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        홈 화면
-    </h1>
-    <script src="/../node_modules/vue/dist/vue.cjs.js"></script>
-    <script>
-        new Vue({
-            data: {
-                test: "hello"
-            },
-            method: {
-                test(){
-                    console.log("hello");
-                }
-            },
-            mounted(){
-                console.log("안녕");
-            }
+    <div id="app">
+        <h1>
+            홈 화면
+            {{ text }}
+        </h1>
+        <img src="kakao.png" alt="Kakao Image">
+    </div>
 
-        });
+    <script src="${pageContext.request.contextPath}/node_modules/vue/dist/vue.global.js"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    text: "vueJS 시작",
+                };
+            },
+            computed: {
+
+            },
+            methods: {
+
+            },
+            watch: {
+
+            },
+            created(){
+                console.log("안녕하세요")
+            },
+        }).mount('#app')
+
     </script>
 </body>
 </html>
