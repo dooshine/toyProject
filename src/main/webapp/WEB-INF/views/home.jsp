@@ -4,14 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        .temp-header {
+            background-color: forestgreen;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
-        <h1>
-            홈 화면
-            {{ text }}
-        </h1>
-        <img src="kakao.png" alt="Kakao Image">
+        <div class="row temp-header">
+            <button>
+                <a href="${pageContext.request.contextPath}/">홈으로</a>
+            </button>
+            <button>
+                <a href="${pageContext.request.contextPath}dev/home">개발테스트 페이지로</a>
+            </button>
+        </div>
+        <div class="row">
+            <h1>
+                홈 화면
+                {{ text }}
+            </h1>
+            <img src="kakao.png" alt="Kakao Image">
+        </div>
     </div>
 
     <script src="${pageContext.request.contextPath}/node_modules/vue/dist/vue.global.js"></script>
