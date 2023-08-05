@@ -8,10 +8,10 @@
 <body>
 <div id="app">
   <div class="container">
-    <div class="row">
+    <div class="row dev-header">
       <h1>개발테스트 헤더</h1>
     </div>
-    <div class="row">
+    <div class="row dev-body">
       <h1>
         개발테스트 본문
       </h1>
