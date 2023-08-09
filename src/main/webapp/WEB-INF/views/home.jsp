@@ -1,42 +1,40 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!doctype html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <div id="app">
-        <h1>
-            홈 화면
-            {{ text }}
-        </h1>
-        <img src="kakao.png" alt="Kakao Image">
-    </div>
 
-    <script src="${pageContext.request.contextPath}/node_modules/vue/dist/vue.global.js"></script>
+<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 
-    <script>
-        const app = Vue.createApp({
-            data() {
-                return {
-                    text: "vueJS 시작",
-                };
-            },
-            computed: {
+<div class="row">
+    <h1>
+        홈 화면
+        {{ text }}
+    </h1>
+    <img src="kakao.png" alt="Kakao Image">
+</div>
 
-            },
-            methods: {
+<div class="row" id="inner-app">
+    <h1>
+        {{ text }}
+    </h1>
+</div>
 
-            },
-            watch: {
+<script>
+    const innerApp = Vue.createApp({
+        data() {
+            return {
+                text: "inner app 시작",
+            };
+        },
+        computed: {
 
-            },
-            created(){
-                console.log("안녕하세요")
-            },
-        }).mount('#app')
+        },
+        methods: {
 
-    </script>
-</body>
-</html>
+        },
+        watch: {
+
+        },
+        created(){
+            console.log("안녕하세요")
+        },
+    }).mount('#inner-app')
+</script>
+<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
