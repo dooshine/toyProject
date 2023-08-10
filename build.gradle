@@ -25,18 +25,18 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-//    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-//    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2'
-    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' // 탐캣
-    implementation 'javax.servlet:jstl:1.2' // jstl
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'javax.servlet:jstl:1.2'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-//    runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
+    runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
     annotationProcessor 'org.projectlombok:lombok'
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.2'
+    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.2'
 	
 	// Json In Java
 	implementation 'org.json:json:20230227'
@@ -46,16 +46,16 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
+task appNpmInstall(type: NpmTask) {
+    description = "Installs dependencies from package.json"
+    workingDir = file("src/main/resources/static")
+    args = ["install"]
+}
+
 tasks.register("npm-install") {
     group = "application"
     description = "Installs dependencies from package.json"
-    tasks.appNpmInstall.exec();
+    tasks.appNpmInstall.exec()
 }
 
-task appNpmInstall(type: NpmTask) {
-    description = "Installs dependencies from package.json"
-    workingDir = file("/src/main/resources/static")
-    inputs.file("package.json")
-    outputs.dir("node_modules")
-    args = ["install"]
-}
+bootRun.dependsOn appNpmInstall
