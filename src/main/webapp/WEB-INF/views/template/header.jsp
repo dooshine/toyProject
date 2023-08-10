@@ -16,6 +16,8 @@
     <script src="${pageContext.request.contextPath}/node_modules/vue/dist/vue.global.js"></script>
     <!-- 부트스트랩(bootstrap) css import -->
     <link href="${pageContext.request.contextPath}/static/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <!-- Axios import -->
+    <script src="${pageContext.request.contextPath}/node_modules/axios/dist/axios.min.js"></script>
 </head>
 <body>
 <div id="body-app">
