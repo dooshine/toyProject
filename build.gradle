@@ -37,6 +37,9 @@ dependencies {
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 //    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.2'
+	
+	// Json In Java
+	implementation 'org.json:json:20230227'
 }
 
 tasks.named('test') {
