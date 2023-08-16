@@ -22,4 +22,14 @@ public class DevController {
     public String imp(){
         return "dev/devImp";
     }
+
+    @GetMapping("/template")
+    public String template(){
+        return "dev/devTemplate";
+    }
+
+    @GetMapping("/template2")
+    public String template2(){
+        return "newObject/asideSection";
+    }
 }

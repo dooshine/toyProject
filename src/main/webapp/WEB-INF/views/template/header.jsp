@@ -4,17 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <style>
-        .temp-header {
-            background-color: forestgreen;
-        }
-        * {
-            box-sizing: border-box;
-        }
-    </style>
+    <%-- common.css import --%>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/common.css" />
+    <%-- doo.css import --%>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/doo.css" />
+    
     <!-- 뷰(vue) js import -->
-    <script src="${pageContext.request.contextPath}node_modules\vue\dist\vue.global.js"></script>
-    //C:\Users\Doo\Desktop\toyProject\src\main\resources\static\node_modules\vue\dist\vue.global.js
+    <script src="${pageContext.request.contextPath}\node_modules\vue\dist\vue.global.js"></script>
     <!-- 부트스트랩(bootstrap) css import -->
     <link href="${pageContext.request.contextPath}/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <!-- Axios import -->
@@ -23,10 +19,19 @@
 <body>
 <div id="body-app">
     <div class="row temp-header">
-        <button>
-            <a href="${pageContext.request.contextPath}/">홈으로</a>
-        </button>
-        <button>
-            <a href="${pageContext.request.contextPath}dev/home">개발테스트 페이지로</a>
-        </button>
+        <div class="col">
+            <button class="btn btn-secondary">
+                <a class="no-de-a" href="${pageContext.request.contextPath}/">홈으로</a>
+            </button>
+            <button class="btn btn-secondary">
+                <a class="no-de-a" href="${pageContext.request.contextPath}/dev/home">개발테스트 페이지로</a>
+            </button>
+            <button class="btn btn-secondary">
+                <a class="no-de-a" href="${pageContext.request.contextPath}/user/">유저 페이지로</a>
+            </button>
+            <button class="ms-auto btn btn-secondary">
+                <a class="no-de-a" href="${pageContext.request.contextPath}/user/">로그인</a>
+            </button>
+            
+        </div>
     </div>
