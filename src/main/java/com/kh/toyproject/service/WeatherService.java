@@ -7,5 +7,5 @@ import com.kh.toyproject.vo.WeatherRequestVO;
 import com.kh.toyproject.vo.WeatherResponseVO;
 
 public interface WeatherService {
-	WeatherResponseVO request(WeatherRequestVO weatherRequestVO) throws URISyntaxException;
+	WeatherResponseVO request(int nx, int ny) throws URISyntaxException;
 }

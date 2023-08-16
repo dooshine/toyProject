@@ -42,6 +42,13 @@
     data() {
       return {
         text: "vueJS 시작",
+        location : {
+        	no : 0,
+        	city : null,
+        	detail : null,
+        	nx : 0,
+        	ny : 0
+        },
         weather : {
         	temp : 0,
         	rainType : 0,
@@ -58,7 +65,7 @@
     },
     methods: {
 		async getWeather(){
-			const url = "/weather/";
+			const url = "/weather/"+location.nx+"/"+location.ny;
 			const resp = await axios.get(url);
 			this.weather = resp.data;
 		},
@@ -69,13 +76,18 @@
 			const resp = await axios.post(url, data);
 			this.answer = resp.data;
 		},
+		
+		async getLocation(){
+			const url = "/location/" + location.city + "/" + location.detail;
+			const resp = await axios.get(url);
+			console.log(resp.data);
+		},
     },
     watch: {
 
     },
     created(){
       console.log("안녕하세요");
-      this.getWeather();
     },
   }).mount('#app')
 
