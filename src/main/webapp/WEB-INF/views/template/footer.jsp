@@ -22,7 +22,7 @@
   }).mount('#body-app')
 
 </script>
-<!-- 부트스트랩(bootstrap) js cdn import -->
-<script src="${pageContext.request.contextPath}/static/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<!-- 부트스트랩(bootstrap) js import -->
+<script src="${pageContext.request.contextPath}/node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 </html>

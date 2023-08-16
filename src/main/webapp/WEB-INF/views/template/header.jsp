@@ -13,9 +13,10 @@
         }
     </style>
     <!-- 뷰(vue) js import -->
-    <script src="${pageContext.request.contextPath}/node_modules/vue/dist/vue.global.js"></script>
+    <script src="${pageContext.request.contextPath}node_modules\vue\dist\vue.global.js"></script>
+    //C:\Users\Doo\Desktop\toyProject\src\main\resources\static\node_modules\vue\dist\vue.global.js
     <!-- 부트스트랩(bootstrap) css import -->
-    <link href="${pageContext.request.contextPath}/static/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <!-- Axios import -->
     <script src="${pageContext.request.contextPath}/node_modules/axios/dist/axios.min.js"></script>
 </head>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ↑ XML 헤더(반드시 첫 번째 줄에 위치) -->
+
+<!-- dtd선언 -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper -->
+<mapper namespace="test">
+    <!-- 테스트 조회 -->
+    <select id="select" resultType="TestDto">
+        select * from test
+    </select>
+    <!-- 테스트 삭제 -->
+    <insert id="join">
+        insert into test (test_no, test_name) values (test_seq.nextval, #{testName})
+    </insert>
+
+    <!-- 테스트 시퀀스 생성 -->
+    <select id="sequence" resultType="Integer">
+        select artist_seq.nextval from dual
+    </select>
+</mapper>
