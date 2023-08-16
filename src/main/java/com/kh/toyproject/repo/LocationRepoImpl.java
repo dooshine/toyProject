@@ -1,6 +1,7 @@
 package com.kh.toyproject.repo;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -20,6 +21,16 @@ public class LocationRepoImpl implements LocationRepo{
 		params.put("locationCity", city);
 		params.put("locationDetail", detail);
 		return sqlSession.selectOne("location.selectByDetail",params);
+	}
+
+	@Override
+	public List<String> selectCityList() {
+		return sqlSession.selectList("location.selectCityList");
+	}
+
+	@Override
+	public List<String> selectDetailList(String city) {
+		return sqlSession.selectList("location.selectDetailList",city);
 	}
 
 }
