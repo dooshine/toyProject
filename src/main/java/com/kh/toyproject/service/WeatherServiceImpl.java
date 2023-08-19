@@ -28,13 +28,13 @@ public class WeatherServiceImpl implements WeatherService{
 	private WeatherProp props;
 	
 	@Override
-	public WeatherResponseVO request(WeatherRequestVO weatherRequestVO) throws URISyntaxException {
+	public WeatherResponseVO request(int nx, int ny) throws URISyntaxException {
 		
 		WeatherResponseVO responseVO = new WeatherResponseVO();
 		LocalDateTime now = LocalDateTime.now();
 		int min = now.getMinute();
 		
-		if(min <= 45) {
+		if(min <= 40) {
 			now = now.minusHours(1);
 		}
 		
@@ -51,8 +51,8 @@ public class WeatherServiceImpl implements WeatherService{
 		uriStr.append("&dataType=JSON");
 		uriStr.append("&base_date=" + nowDate);
 		uriStr.append("&base_time=" + nowTime);
-		uriStr.append("&nx=55");
-		uriStr.append("&ny=127");
+		uriStr.append("&nx="+nx);
+		uriStr.append("&ny="+ny);
 		
 		URI uri =new URI(uriStr.toString());
 		

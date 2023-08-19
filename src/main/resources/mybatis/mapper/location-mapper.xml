@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ↑ XML 헤더(반드시 첫 번째 줄에 위치) -->
+
+<!-- dtd선언 -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper -->
+<mapper namespace="location">
+    <select id="select" resultType="LocationDto">
+        select * from location
+    </select>
+    <select id="selectByDetail" resultType="LocationDto">
+    	select * from location where location_city = #{locationCity} and location_detail = #{locationDetail}
+    </select>
+    <select id="selectCityList" resultType="String">
+    	select location_city from location group by location_city
+    </select>
+    <select id="selectDetailList" resultType="String">
+    	select location_detail from location where location_city=#{locationCity} group by location_detail
+    </select>
+</mapper>
