@@ -62,6 +62,8 @@ public class ChatGptServiceImpl implements ChatGptService{
 		question.append("현재 습도는" + weatherVO.getHumid() + "% 이며");
 		question.append("현재 풍속은" + weatherVO.getWind() + "m/s 입니다.");
 		question.append("지금 입고 나갈 옷의 상의 하의 신발을 간략하게 추천해주세요");
+		question.append("의상을 추천할 때는 구체적인 색과 재질도 함께 명시해주세요");
+		question.append("답변의 형식은 상의 : ~ , 하의 : ~, 신발 : ~, 악세서리 : ~ 이런식으로 답변해주시고 기온이 낮다면 외투도 적어주세요");
 				
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Authorization", "Bearer " + prop.getKey());
