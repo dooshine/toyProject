@@ -15,6 +15,19 @@
       <h1>
         개발테스트 본문
       </h1>
+      <select v-model="city">
+      	<option v-for="(item, index) in cities" :value="item">
+      		{{item}}
+      	</option>
+      </select>
+      <select v-model="detail">
+      	<option v-for="(item, index) in details" :value="item">
+      		{{item}}
+      	</option>
+      </select>
+      
+      <button v-on:click="getWeather()">날씨조회</button>
+      
       <h2> 현재 기온은 {{weather.temp}}℃ 입니다.</h2>
       <h2> 현재 습도는 {{weather.humid}}% 입니다.</h2>
       <h2> 현재 풍속은 {{weather.wind}}m/s 입니다.</h2>
@@ -29,7 +42,7 @@
       
       <h2 v-if="weather.rainType != 0">현재 시간당 강수량은 {{weather.rainAmount}}mm 입니다.</h2>
       <h2>{{answer}}</h2>
-      <button v-on:click="getAnswer()">Create</button>
+      <button v-on:click="getAnswer()">GPT생성</button>
     </div>
   </div>
 </div>
@@ -42,6 +55,17 @@
     data() {
       return {
         text: "vueJS 시작",
+        location : {
+        	locationNo : 0,
+        	locationCity : null,
+        	locationDetail : null,
+        	locationNx : 0,
+        	locationNy : 0
+        },
+        cities : null,
+        details : null,
+        city : null,
+        detail : null,
         weather : {
         	temp : 0,
         	rainType : 0,
@@ -58,7 +82,7 @@
     },
     methods: {
 		async getWeather(){
-			const url = "/weather/";
+			const url = "/weather/"+this.location.locationNx+"/"+this.location.locationNy;
 			const resp = await axios.get(url);
 			this.weather = resp.data;
 		},
@@ -69,13 +93,37 @@
 			const resp = await axios.post(url, data);
 			this.answer = resp.data;
 		},
+		
+		async getLocation(){
+			const url = "/location/" + this.city + "/" + this.detail;
+			const resp = await axios.get(url);
+			this.location = resp.data;
+		},
+		
+		async getCities(){
+			const url = "/location/city";
+			const resp = await axios.get(url);
+			this.cities = resp.data;
+		},
+		
+		async getDetails(){
+			const url = "/location/detail/"+this.city;
+			const resp = await axios.get(url);
+			this.details = resp.data;
+		}
+		
     },
     watch: {
-
+		city : function(){
+			this.getDetails();
+		},
+		detail : function(){
+			this.getLocation();
+		}
     },
     created(){
       console.log("안녕하세요");
-      this.getWeather();
+      this.getCities();
     },
   }).mount('#app')
 
