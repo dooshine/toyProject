@@ -2,17 +2,18 @@
 
 <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 
-<div class="row">
-    <h1>
-        유저로그인 화면
-        {{ text }}
-    </h1>
-</div>
-
 <div class="row" id="inner-app">
-    <h1>
-        {{ text }}
-    </h1>
+    <div class="col-6 offset-3 mt-5">
+        <div class="mb-3">
+            <h1>로그인</h1>
+        </div>
+        <form method="post" action="login">
+            <div class="input-group">
+                <span class="input-group-text">아이디</span>
+                <input type="text" name="userId" class="form-control">
+            </div>
+        </form>    
+    </div>
 </div>
 
 <script>

@@ -18,19 +18,19 @@
 </head>
 <body>
 <div id="body-app">
-    <div class="row temp-header">
-        <div class="col">
-            <button class="btn btn-secondary">
+    <div class="row main-header">
+        <div class="col d-flex">
+            <button class="btn btn-lg btn-secondary">
                 <a class="no-de-a" href="${pageContext.request.contextPath}/">홈으로</a>
             </button>
-            <button class="btn btn-secondary">
+            <button class="btn btn-lg btn-secondary">
                 <a class="no-de-a" href="${pageContext.request.contextPath}/dev/home">개발테스트 페이지로</a>
             </button>
-            <button class="btn btn-secondary">
+            <button class="btn btn-lg btn-secondary">
                 <a class="no-de-a" href="${pageContext.request.contextPath}/user/">유저 페이지로</a>
             </button>
-            <button class="ms-auto btn btn-secondary">
-                <a class="no-de-a" href="${pageContext.request.contextPath}/user/">로그인</a>
+            <button class="ms-auto btn btn-lg btn-secondary">
+                <a class="no-de-a" href="${pageContext.request.contextPath}/user/login">로그인</a>
             </button>
             
         </div>
