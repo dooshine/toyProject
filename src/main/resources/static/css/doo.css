@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/* a태그 초기화 */
+.no-de-a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dev-nav {
+    background-color: navajowhite;
+}
+
+.dev-body {
+    background-color: aquamarine;
+}
+
+.dev-nav .row {
+    border-bottom: 1px solid black;
+}
+
+
+.newObject-nav {
+    background-color: navajowhite;
+}
+
+.newObject-body {
+    background-color: aquamarine;
+}
+
+.newObject-nav .row {
+    border-bottom: 1px solid black;
+}

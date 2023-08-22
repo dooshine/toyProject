@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+/* 전체 항목 box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+.main-header {
+    background-color: forestgreen;
+}
