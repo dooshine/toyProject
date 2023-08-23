@@ -24,7 +24,7 @@
                 <a class="no-de-a" href="${pageContext.request.contextPath}/">홈으로</a>
             </button>
             <button class="btn btn-lg btn-secondary">
-                <a class="no-de-a" href="${pageContext.request.contextPath}/dev/home">개발테스트 페이지로</a>
+                <a class="no-de-a" href="${pageContext.request.contextPath}/dev/">개발테스트 페이지로</a>
             </button>
             <button class="btn btn-lg btn-secondary">
                 <a class="no-de-a" href="${pageContext.request.contextPath}/user/">유저 페이지로</a>
