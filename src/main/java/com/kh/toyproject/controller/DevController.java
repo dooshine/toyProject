@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/dev")
 public class DevController {
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String home(){
         return "dev/devHome";
     }
