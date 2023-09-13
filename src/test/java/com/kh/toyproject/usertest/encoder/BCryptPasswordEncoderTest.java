@@ -17,13 +17,18 @@ public class BCryptPasswordEncoderTest {
     @Test
     public void bCryptPasswordEncoderTest01(){
         
+        // # 인코더 생성
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
         // BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        
+        // # 인코딩
         String result = encoder.encode("myPassword");
         String result2 = encoder.encode("myPassword");
         log.debug("assertTrue 이제 시작한디");
         // assertTrue(encoder.matches("myPasswor", result));
         // assertEquals(encoder.encode("myPassword"), result);
+        
+        // # 결과확인
         log.debug("{}",result);
         log.debug("{}",result2);
         log.debug("{}", encoder.matches("myPassword", result));

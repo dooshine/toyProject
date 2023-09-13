@@ -5,31 +5,28 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
+import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Slf4j
 @SpringBootTest
-public class Argon2PasswordEncoderTest {
-    
-    // implementation 'org.bouncycastle:bcprov-jdk15on:1.70' 디펜던시 필요
+public class Pbkdf2PasswordEncoderTest {
+
     @MockBean
-    private ChatGptServiceImpl chatGptService;
+    private ChatGptServiceImpl chatGptServiceImpl;
+    
     @Test
-    public void argon2PasswordEncoder(){
+    public void pbkdf2PasswordEncoderTest01(){
 
         // # 인코더 생성
-        Argon2PasswordEncoder encoder = Argon2PasswordEncoder.defaultsForSpringSecurity_v5_8();
+        Pbkdf2PasswordEncoder encoder = Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8();
 
         // # 인코딩
         String result = encoder.encode("myPassword");
-        String result2 = encoder.encode("myPassword");
 
         // # 결과확인
-        log.debug("========== argon2PasswordEncoder 시작 ==========");
-        log.debug("{}", result);
-        log.debug("{}", result2);
         assertTrue(encoder.matches("myPassword", result));
+        // assertTrue(encoder.matches("myPassword1", result));
     }
 }
