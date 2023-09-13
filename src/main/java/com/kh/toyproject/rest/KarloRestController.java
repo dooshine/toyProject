@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kh.toyproject.service.ChatGptService;
-import com.kh.toyproject.vo.ChatGptRequestVO;
+import com.kh.toyproject.service.KarloService;
+import com.kh.toyproject.vo.KarloResponseVO;
 
 @RestController
-@RequestMapping("/chat")
-public class ChatGptRestController {
+@RequestMapping("/karlo")
+public class KarloRestController {
 	
 	@Autowired
-	private ChatGptService gptService;
+	private KarloService karloService;
 	
 	@PostMapping("/")
-	public String getGpt(@RequestBody ChatGptRequestVO vo) throws URISyntaxException {
-		return gptService.chatRequest(vo);
+	public KarloResponseVO genImage(@RequestBody String prompt) throws URISyntaxException {
+		return karloService.KarloResponse(prompt);
 	}
 }
