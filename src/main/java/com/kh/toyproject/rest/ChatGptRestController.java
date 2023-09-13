@@ -14,10 +14,10 @@ import com.kh.toyproject.vo.ChatGptRequestVO;
 @RestController
 @RequestMapping("/chat")
 public class ChatGptRestController {
-	
+
 	@Autowired
 	private ChatGptService gptService;
-	
+
 	@PostMapping("/")
 	public String getGpt(@RequestBody ChatGptRequestVO vo) throws URISyntaxException {
 		return gptService.chatRequest(vo);

@@ -1,19 +1,21 @@
 package com.kh.toyproject.repo;
 
+import com.kh.toyproject.dto.LocationDto;
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.ibatis.session.SqlSession;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
-
-import com.kh.toyproject.dto.LocationDto;
-
 @Repository
 public class LocationRepoImpl implements LocationRepo{
-	@Autowired
-	private SqlSession sqlSession;
+	
+	private final SqlSession sqlSession;
+	
+	public LocationRepoImpl (SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
+	}
 	
 	@Override
 	public LocationDto selectByDetail(String city, String detail) {

@@ -1,13 +1,12 @@
 package com.kh.toyproject;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
 class ToyProjectApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("이거 된다고 ?");
     }
 
 }

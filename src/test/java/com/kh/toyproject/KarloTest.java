@@ -1,8 +1,6 @@
 package com.kh.toyproject;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-
+import com.kh.toyproject.vo.KarloResponseVO;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,8 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.client.RestTemplate;
 
-import com.kh.toyproject.vo.KarloResponseVO;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @SpringBootTest
 public class KarloTest {

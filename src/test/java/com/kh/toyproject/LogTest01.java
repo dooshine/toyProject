@@ -6,11 +6,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Example;
 
+
 @SpringBootTest
 public class LogTest01 {
     private static final Logger logger = LoggerFactory.getLogger(LogTest01.class);
+
     @Test
-    void logTest01() {
+    public void logTest01() {
         logger.info("Example log from {}", Example.class.getSimpleName());
     }
 }
