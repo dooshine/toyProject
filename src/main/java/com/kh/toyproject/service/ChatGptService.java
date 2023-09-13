@@ -2,8 +2,8 @@ package com.kh.toyproject.service;
 
 import java.net.URISyntaxException;
 
-import com.kh.toyproject.vo.WeatherResponseVO;
+import com.kh.toyproject.vo.ChatGptRequestVO;
 
 public interface ChatGptService {
-	String chatRequest(WeatherResponseVO weatherVO) throws URISyntaxException;
+	String chatRequest(ChatGptRequestVO requestVO) throws URISyntaxException;
 }

@@ -15,6 +15,14 @@
       <h1>
         개발테스트 본문
       </h1>
+      
+      <div>
+      	<input type="radio" v-model="gender" value="man">
+      	<label>남자</label>
+      	<input type="radio" v-model="gender" value="woman">
+      	<label>여자</label>
+      </div>
+      
       <select v-model="city">
       	<option v-for="(item, index) in cities" :value="item">
       		{{item}}
@@ -43,6 +51,8 @@
       <h2 v-if="weather.rainType != 0">현재 시간당 강수량은 {{weather.rainAmount}}mm 입니다.</h2>
       <h2>{{answer}}</h2>
       <button v-on:click="getAnswer()">GPT생성</button>
+      <button v-on:click="genImage()">이미지생성</button>
+      <img v-if="imgUrl != null" :src="imgUrl">
     </div>
   </div>
 </div>
@@ -66,6 +76,8 @@
         details : null,
         city : null,
         detail : null,
+        gender : null,
+        imgUrl : null,
         weather : {
         	temp : 0,
         	rainType : 0,
@@ -90,6 +102,7 @@
 		async getAnswer(){
 			const url = "/chat/";
 			const data = this.weather;
+			data.gender = this.gender;
 			const resp = await axios.post(url, data);
 			this.answer = resp.data;
 		},
@@ -110,6 +123,13 @@
 			const url = "/location/detail/"+this.city;
 			const resp = await axios.get(url);
 			this.details = resp.data;
+		},
+		
+		async genImage(){
+			const url = "/karlo/";
+			const data = this.answer;
+			const resp = await axios.post(url, data);
+			this.imgUrl = resp.data.images[0].image;
 		}
 		
     },
