@@ -34,7 +34,7 @@ public class ChatGptServiceImpl implements ChatGptService{
 	public String chatRequest(ChatGptRequestVO requestVO) throws URISyntaxException {
 		URI uri = new URI("https://api.openai.com/v1/chat/completions");
 		
-		StringBuilder question = new StringBuilder("The current temperature is " + requestVO.getTemp() + "℃");
+		StringBuilder question = new StringBuilder("The current temperature is " + requestVO.getTemp() + "degrees.");
 		
 		switch(requestVO.getRainType()) {
 			case 1:
@@ -66,13 +66,14 @@ public class ChatGptServiceImpl implements ChatGptService{
 		question.append("\"\"\"");
 		question.append("woman is wearing a white linen blouse and a black leather skirt.");
 		question.append("\"\"\"");
-		question.append("If the current temperature is below 22℃, add an outer clothing and answer in the following example format.");
+		question.append("If the current temperature is below 22 degrees, add an outer clothing and Please follow the example below for the format of your answer.");
 		question.append("\"\"\"");
 		question.append("woman is wearing a white Oxford blouse, a brown leather jacket and black leather skirt.");
 		question.append("\"\"\"");
 		question.append("When the gender is a man, please write man instead of woman.");
 		question.append("Please be sure to answer based on the weather we have informed you and pay attention to the format of the answer. And the color and material of the outfit must be present.");
 		question.append("Please provide various materials, colors, and types of clothes.");
+		question.append("If the current temperature is below 22 degrees, Must recommend an outer clothing.");
 		
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Authorization", "Bearer " + openAiKey);
