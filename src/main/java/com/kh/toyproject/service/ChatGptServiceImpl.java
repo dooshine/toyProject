@@ -29,7 +29,11 @@ public class ChatGptServiceImpl implements ChatGptService{
 	
 	@Autowired
 	private RestTemplate template;
-	
+
+	public ChatGptServiceImpl(RestTemplate template) {
+		this.template = template;
+	}
+
 	@Override
 	public String chatRequest(ChatGptRequestVO requestVO) throws URISyntaxException {
 		URI uri = new URI("https://api.openai.com/v1/chat/completions");

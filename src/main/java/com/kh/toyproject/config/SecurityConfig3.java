@@ -24,8 +24,8 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 // import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 // import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration
-@EnableWebSecurity
+// @Configuration
+// @EnableWebSecurity
 public class SecurityConfig3 {
     private final HandlerMappingIntrospector introspector;
     
