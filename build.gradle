@@ -30,10 +30,10 @@ dependencies {
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2'              // 마이바티스
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'                            // 톰켓
     implementation 'javax.servlet:jstl:1.2'                                                 // jstl
-    // implementation 'org.springframework.boot:spring-boot-starter-security:3.1.2'            // 스프링부트 시큐리티
-    // implementation 'org.bouncycastle:bcprov-jdk15on:1.70'                                   // Argon2PasswordEncoder
+    implementation 'org.springframework.boot:spring-boot-starter-security:3.1.2'            // 스프링부트 시큐리티
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.70'                                   // Argon2PasswordEncoder
     testImplementation 'org.projectlombok:lombok:1.18.26'                                   // 롬복(테스트)
-    // testImplementation 'org.springframework.security:spring-security-test:6.1.2'            // 스프링 부트 시큐리티(테스트)
+    testImplementation 'org.springframework.security:spring-security-test:6.1.2'            // 스프링 부트 시큐리티(테스트)
     compileOnly 'org.projectlombok:lombok'                                                  // 롬복
     developmentOnly 'org.springframework.boot:spring-boot-devtools'                         // 스프링부트
     runtimeOnly 'com.oracle.database.jdbc:ojdbc8'                                           // 오라클 드라이버
